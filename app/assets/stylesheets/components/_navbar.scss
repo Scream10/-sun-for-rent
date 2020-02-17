@@ -1,5 +1,9 @@
 a.nav-link {
   color: white !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 16px;
     &:hover, &:focus {
       border-bottom: 1px solid white !important;
     }
@@ -7,8 +11,8 @@ a.nav-link {
 
 .navbar-home {
   justify-content: space-between;
-  background: linear-gradient(rgba(128,128,128,0.4), transparent);
-
+  background: linear-gradient(rgba(116,116,116,0.4), transparent);
+  z-index : 1;
 }
 
 .navbar-home .navbar-collapse {
