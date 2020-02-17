@@ -1,12 +1,24 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+a.nav-link {
+  color: white !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 16px;
+    &:hover, &:focus {
+      border-bottom: 1px solid white !important;
+    }
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-home {
+  justify-content: space-between;
+  background: linear-gradient(rgba(116,116,116,0.4), transparent);
+  z-index : 1;
+}
+
+.navbar-home .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-home .navbar-brand img {
   width: 40px;
 }

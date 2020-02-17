@@ -10,12 +10,23 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<!--     <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
 
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
 
+    <div class="footer">
+      <div class="footer-copyright">
+        © 2020 Sun-For-Rent, Inc. All rights reserved
+      </div>
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
