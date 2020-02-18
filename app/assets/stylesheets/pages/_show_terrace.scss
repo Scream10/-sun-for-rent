@@ -1,0 +1,50 @@
+
+h2 {
+  color: $black;
+  padding: 24px;
+  margin: 0px 0px 0px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.container {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 16px;
+}
+
+.host-name {
+  color: #484848;
+  font-size: 24px;
+  width: 100%;
+  border-bottom: 1px solid $light-gray;
+  grid-column-start: 1;
+  grid-column-end: 8;
+}
+
+.description {
+  grid-column-start: 1;
+  grid-column-end: 8;
+}
+
+
+
+
+// .bottom-page {
+//   display: grid !important;
+//   grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+//   grid-column-gap: 16px !important;
+// }
+
+.img-terrace {
+  // object-fit: cover;
+  width: 55%;
+  height: 55%;
+  vertical-align: bottom;
+
+}
+
