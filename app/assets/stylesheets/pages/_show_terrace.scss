@@ -19,6 +19,7 @@ h2 {
 
 .host-name {
   color: #484848;
+  padding: 12px;
   font-size: 24px;
   width: 100%;
   border-bottom: 1px solid $light-gray;
@@ -30,21 +31,31 @@ h2 {
   grid-column-start: 1;
   grid-column-end: 8;
 }
-
-
-
-
-// .bottom-page {
-//   display: grid !important;
-//   grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
-//   grid-column-gap: 16px !important;
-// }
+.address {
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
 
 .img-terrace {
-  // object-fit: cover;
-  width: 55%;
-  height: 55%;
+  width: 55%; // 55%
+  height: 55%; // 55%
+  border-radius: 5px;
+  margin-top: 12px;
   vertical-align: bottom;
-
 }
+
+.check-dispo {
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+
+
+
+
 
