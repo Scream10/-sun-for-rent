@@ -3,6 +3,7 @@
 <ul>
 <% @user.terraces.each do |terrace| %>
   <li><%= terrace[:name] %> - <%= link_to 'delete', user_terrace_path(@user.id), method: :destroy %></li>
+  <%= cl_image_tag terrace.photo.key %>
 <% end %>
 </ul>
 <br>
