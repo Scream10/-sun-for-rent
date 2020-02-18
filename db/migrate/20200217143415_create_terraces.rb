@@ -4,7 +4,7 @@ class CreateTerraces < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.string :address
-      t.string :status
+      t.boolean :status
       t.references :user, foreign_key: true
 
       t.timestamps

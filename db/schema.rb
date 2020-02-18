@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_142105) do
     t.string "name"
     t.text "description"
     t.string "address"
-    t.string "status"
+    t.boolean "status"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
