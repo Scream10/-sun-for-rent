@@ -1,8 +1,62 @@
-<h2>Show of one terrace</h2>
-<%= @terrace.name %>
-<%= @terrace.description %>
-<%= @terrace.address %>
-<%= @terrace.status %>
-<%= cl_image_tag @terrace.photo.key %>
-<br>
-<%= link_to 'Back to the list', terraces_path, class: 'btn btn-sm btn-outline-primary' %>
+<div class="navbar navbar-expand-sm navbar-light navbar-second">
+  <%= link_to "#", class: "navbar-brand" do %>
+  <%= image_tag "" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <div class="nav-sec-item">
+        <li>
+          <%= link_to "Host a terrace", "#", class: "nav-sec-link" %>
+        </li>
+      </div>
+      <div class="nav-sec-item">
+        <li>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-sec-link" %>
+        </li>
+      </div>
+      <div class='nav-sec-item'>
+        <li>
+          <%= link_to "Log in", "#", class: "nav-sec-link" %>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<div class="container ">
+  <h2><%= @terrace.name %></h2>
+
+  <div class="d-flex justify-content-center">
+    <%= cl_image_tag @terrace.photo.key, class: "img-terrace" %>
+  </div>
+
+  <div id="wrapper">
+    <div class="host-name">
+      <h4>Host Name</h4>
+    </div>
+
+    <div class="description">
+      <%= @terrace.description %>
+      <br>
+      <br>
+    </div>
+
+    <div class="address">
+      <em><%= @terrace.address %></em>
+    </div>
+
+    <div class="check-dispo btn btn-lg btn-primary">
+      Book this terrace
+      <!-- link_to '#', new_booking_path -->
+    </div>
+  </div>
+</div>
+
+<div class =" mt-5 mb-5 d-flex justify-content-center">
+  <%= link_to 'Back to the list', terraces_path, class: 'btn btn-sm btn-outline-primary' %>
+</div>
