@@ -1,8 +1,17 @@
 .card.terrace {
+  position: relative;
+  bottom: 0px;
+  transition: 0.5s ease;
   border: none;
-  border-radius: 5px !important;
+  border-radius: 5px;
   &:hover {
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    bottom: 5px;
+  }
+  &:hover .card-img-top.terrace {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: #000;
   }
 }
 
@@ -12,9 +21,9 @@
 }
 
 .card-img-top.terrace {
-  border-radius: 5px !important;
+  border-radius: 5px;
 }
 
 h5.card-title.terrace {
-
+  margin-bottom: 0px;
 }
