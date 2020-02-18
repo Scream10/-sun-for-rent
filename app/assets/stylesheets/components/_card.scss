@@ -1,0 +1,20 @@
+.card.terrace {
+  border: none;
+  border-radius: 5px !important;
+  &:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card-body.terrace {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.card-img-top.terrace {
+  border-radius: 5px !important;
+}
+
+h5.card-title.terrace {
+
+}

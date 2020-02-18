@@ -1,11 +1,11 @@
 <div class="container">
-  <h2>List of all terraces</h2>
+  <h2 class="mt-3">List of all terraces</h2>
   <div class="row">
     <% @terraces.each do |terrace| %>
-      <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <%= cl_image_tag terrace.photo.key, class: "card-img-top" %>
-          <div class="card-body">
+      <div class="col-sm-3">
+        <div class="card terrace my-3" style="width: 17rem;">
+          <%= cl_image_tag terrace.photo.key, class: "card-img-top terrace" %>
+          <div class="card-body terrace">
             <h5 class="card-title"><%= link_to terrace.name, terrace_path(terrace) %></h5>
             <p class="card-text"><%= terrace.description %></p>
           </div>
