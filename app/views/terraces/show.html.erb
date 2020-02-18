@@ -3,5 +3,6 @@
 <%= @terrace.description %>
 <%= @terrace.address %>
 <%= @terrace.status %>
+<%= cl_image_tag @terrace.photo.key %>
 <br>
 <%= link_to 'Back to the list', terraces_path, class: 'btn btn-sm btn-outline-primary' %>
