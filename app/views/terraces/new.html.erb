@@ -1,15 +1,48 @@
+<div class="navbar navbar-home navbar-expand-sm navbar-light">
+  <%= link_to "#", class: "navbar-brand" do %>
+  <%= image_tag "" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Host a terrace", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Log in", "#", class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class= "background-form">
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-4 offset-sm-4">
-      <h2>new terrace</h2>
-      <%= simple_form_for [ @user, @terrace ] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
-        <%= f.input :address %>
-        <%= f.input :status %>
-        <%= f.button :submit %>
-      <% end %>
+      <div class="card new">
+        <div class= "d-flex justify-content-center">
+          <h2>New terrace</h2>
+        </div>
+          <%= simple_form_for [ @user, @terrace ] do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :photo, as: :file %>
+            <%= f.input :address %>
+            <%= f.input :status %>
+          <div class= "d-flex justify-content-center">
+             <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
