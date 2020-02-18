@@ -2,7 +2,12 @@
 <h4>My list of terraces</h4>
 <ul>
 <% @user.terraces.each do |terrace| %>
-  <li><%= terrace[:name] %> - <%= link_to 'delete', user_terrace_path(@user.id), method: :destroy %></li>
+  <li>
+    <%= terrace[:name] %> - 
+    <%= link_to "Delete", user_terrace_path(terrace.user_id, terrace),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+  </li>
   <%= cl_image_tag terrace.photo.key %>
 <% end %>
 </ul>
