@@ -1,4 +1,12 @@
 class TerracesController < ApplicationController
+  def index
+    @terraces = Terrace.all
+  end
+
+  def show
+    @terrace = Terrace.find(params[:id])
+  end
+
   def new
     @terrace = Terrace.new()
     @user = User.find(params[:user_id])
@@ -16,13 +24,15 @@ class TerracesController < ApplicationController
   end
 
   def destroy
-    @terrace.find(params[:id])
+    @user = User.find(params[:user_id])
+    @terrace = Terrace.find(params[:id])
     @terrace.destroy
+    redirect_to user_path(@user.id)
   end
 
   private
 
   def terrace_params
-    params.require(:terrace).permit(:name, :description, :address, :status, :user_id)
+    params.require(:terrace).permit(:name, :description, :photo, :address, :status, :user_id)
   end
 end
