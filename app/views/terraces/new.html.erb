@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>
+<h2>new terrace</h2>
+<%= simple_form_for [ @user, @terrace ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :status %>
+  <%= f.button :submit %>
+<% end %>

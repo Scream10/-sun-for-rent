@@ -1,0 +1,7 @@
+<h2>TODO: Dashboard User</h2>
+<h4>My list of terraces</h4>
+<% @user.terraces.each do |terrace| %>
+  - <%= terrace[:name] %>
+<% end %>
+<br>
+<%= link_to 'New terrace', new_user_terrace_path(@user.id) %>
