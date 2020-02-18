@@ -1,8 +1,10 @@
 <h2>List of all terraces</h2>
 <% @terraces.each do |terrace| %>
-  <div>
-    <%= link_to terrace.name, terrace_path(terrace) %>
-    <%= terrace.address %>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to terrace.name, terrace_path(terrace) %></h5>
+      <p class="card-text"><%= terrace.description %></p>
+    </div>
   </div>
-  <br>
 <% end %>
