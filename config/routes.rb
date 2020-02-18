@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :terraces, only: [ :create, :new, :destroy ]
     resources :bookings, only: [ :create, :new, :destroy ]
   end
+  resources :terraces, only: [ :index, :show ]
 end
