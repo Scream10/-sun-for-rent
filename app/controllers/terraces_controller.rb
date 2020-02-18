@@ -1,4 +1,5 @@
 class TerracesController < ApplicationController
+
   def index
     @terraces = Terrace.all
   end

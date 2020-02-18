@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 2020_02_18_142105) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer "price"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.bigint "terrace_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["terrace_id"], name: "index_bookings_on_terrace_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "terraces", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -63,5 +75,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_142105) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "terraces"
+  add_foreign_key "bookings", "users"
   add_foreign_key "terraces", "users"
 end

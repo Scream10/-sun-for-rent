@@ -1,0 +1,6 @@
+<h2> Disponibilités pour la terrasse <%= @terrace.name %></h2>
+<%= simple_form_for [@terrace, @booking] do |f|  %>
+  <%= f.input :start_date, as: :date%>
+  <%= f.input :end_date, as: :date %>
+  <%= f.submit 'Prendre le soleil au calme', class: 'btn btn-primary' %>
+  <% end %>

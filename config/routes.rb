@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :users, except: [ :index ] do
-    resources :terraces, only: [ :create, :new, :destroy ]
-    resources :bookings, only: [ :create, :new, :destroy ]
+  resources :terraces, only: [ :index, :show, :create, :new, :destroy ] do
+    resources :bookings, only: [ :create, :new ]
   end
 
-  resources :terraces, only: [ :index, :show ]
+  resources :bookings, only: [ :index, :destroy ]
 
-  get '/host', to: 'users#host'
+  get '/host', to: 'pages#host'
 end
