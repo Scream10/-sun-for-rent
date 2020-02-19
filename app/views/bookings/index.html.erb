@@ -29,13 +29,12 @@
 </div>
 
 <div>
-
   <h2> Liste de vos réservations</h2>
   <% @bookings.each do |booking| %>
-   <p><%= booking.terrace.name %></p>
+    <p><%= booking.terrace.name %></p>
     <p><%= booking.terrace.address %></p>
-   <p><%= booking.start_date %></p>
-   <p><%= booking.end_date %></p>
-  <% end %>
-
+    <p><%= booking.start_date %></p>
+    <p><%= booking.end_date %></p>
+    <p><%= ((booking.end_date - booking.start_date).to_i) * booking.terrace.price_per_night %> € </p>
+   <% end %>
 </div>
