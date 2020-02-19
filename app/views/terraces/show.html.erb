@@ -11,7 +11,7 @@
     <ul class="navbar-nav mr-auto">
       <div class="nav-sec-item">
         <li>
-          <%= link_to "Host a terrace", "#", class: "nav-sec-link" %>
+          <%= link_to "Host a terrace", host_path, class: "nav-sec-link" %>
         </li>
       </div>
       <div class="nav-sec-item">
@@ -21,7 +21,7 @@
       </div>
       <div class='nav-sec-item'>
         <li>
-          <%= link_to "Log in", "#", class: "nav-sec-link" %>
+          <%= link_to "Log in", user_session_path, class: "nav-sec-link" %>
         </li>
       </div>
     </ul>
@@ -50,9 +50,8 @@
       <em><%= @terrace.address %></em>
     </div>
 
-    <div class="check-dispo btn btn-lg btn-primary">
-      Book this terrace
-      <!-- link_to '#', new_booking_path -->
+    <div class="check-dispo">
+      <%= link_to 'Book this terrace', new_terrace_booking_path(@terrace), class: "btn btn-lg btn-primary" %>
     </div>
   </div>
 </div>
