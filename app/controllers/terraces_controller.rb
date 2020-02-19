@@ -8,8 +8,8 @@ class TerracesController < ApplicationController
       @terraces = Terrace.all
     end
 
-    terraces = Terrace.geocoded
-    @markers = terraces.map do |terrace|
+    @terraces = Terrace.geocoded
+    @markers = @terraces.map do |terrace|
       {
         lat: terrace.latitude,
         lng: terrace.longitude
