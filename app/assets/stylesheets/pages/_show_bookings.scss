@@ -19,7 +19,7 @@ h2 {
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 210px; // height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,4 +57,10 @@ h2 {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   padding: 0px;
   margin: 0px;
+}
+
+.btn-toggle-date {
+  padding: 0px;
+  font-size: 20px;
+  border: none;
 }
