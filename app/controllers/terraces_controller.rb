@@ -1,7 +1,13 @@
 class TerracesController < ApplicationController
 
   def index
-    @terraces = Terrace.all
+    if params["terrace"]["address"].present?
+      query = params["terrace"]["address"]
+      sql_query = "terraces.address ILIKE :query"
+      @terraces = Terrace.where(sql_query, query: "%#{query}%")
+    else
+      @terraces = Terrace.all
+    end
   end
 
   def show

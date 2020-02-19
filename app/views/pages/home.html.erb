@@ -23,6 +23,23 @@
     </div>
   </div>
 
-
   <%= image_tag "Background.jpg", class: "img-background" %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 offset-sm-4">
+        <div class="card search">
+          <div class= "d-flex justify-content-center">
+            <h2>Book unique terraces to enjoy</h2>
+          </div>
+            <%= simple_form_for :terrace, url: terraces_path, method: :get do |f| %>
+              <%= f.input :address, name: "search[query]" %>
+              <div class= "d-flex justify-content-center">
+              <%= f.submit 'search', class: 'btn btn-primary' %>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
