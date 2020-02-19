@@ -1,8 +1,49 @@
-<h2> Disponibilités pour la terrasse <%= @terrace.name %></h2>
-<h4>Prix: <%= @terrace.price_per_night %>€<h4>
-<br>
-<%= simple_form_for [@terrace, @booking] do |f|  %>
-  <%= f.input :start_date, as: :date%>
-  <%= f.input :end_date, as: :date %>
-  <%= f.submit 'Prendre le soleil au calme', class: 'btn btn-primary' %>
+<div class="navbar navbar-expand-sm navbar-light navbar-second">
+  <%= link_to "#", class: "navbar-brand" do %>
+  <%= image_tag "" %>
   <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <div class="nav-sec-item">
+        <li>
+          <%= link_to "Host a terrace", "#", class: "nav-sec-link" %>
+        </li>
+      </div>
+      <div class="nav-sec-item">
+        <li>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-sec-link" %>
+        </li>
+      </div>
+      <div class='nav-sec-item'>
+        <li>
+          <%= link_to "Log in", "#", class: "nav-sec-link" %>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <div class="card new">
+        <div class= "d-flex justify-content-center">
+          <h2> Booking the terrace : <%= @terrace.name %></h2>
+        </div>
+        <div class= "d-flex justify-content-center">
+          <h5>Price per day: <%= @terrace.price_per_night %>€<h4>
+        </div>
+          <%= simple_form_for [@terrace, @booking] do |f|  %>
+            <%= f.input :start_date, as: :date%>
+            <%= f.input :end_date, as: :date %>
+            <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
