@@ -41,9 +41,7 @@
           <%= simple_form_for [@terrace, @booking] do |f|  %>
             <%= f.input :start_date, as: :date%>
             <%= f.input :end_date, as: :date %>
-            <div class= "d-flex justify-content-center">
-              <%= f.submit 'Book', class: "btn btn-primary btn-sm" %>
-            </div>
+            <%= f.button :submit, class: "btn btn-primary btn-sm" %>
           <% end %>
       </div>
     </div>
