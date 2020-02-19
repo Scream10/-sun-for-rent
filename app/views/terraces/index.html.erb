@@ -1,16 +1,28 @@
-<div class="container">
+<div class="container-sm">
   <h2 class="mt-3">Find your sunny terrace</h2>
   <div class="row">
-    <% @terraces.each do |terrace| %>
-      <div class="col-sm-3">
-        <div class="card terrace my-3">
-          <%= cl_image_tag terrace.photo.key, class: "card-img-top terrace" %>
-          <div class="card-body terrace">
-            <h5 class="card-title terrace"><%= link_to terrace.name, terrace_path(terrace) %></h5>
-            <p class="card-text"><%= terrace.description %></p>
+
+    <div class="col-sm-7">
+      <div class="row">
+      <% @terraces.each do |terrace| %>
+        <div class="col-sm-4">
+          <div class="card terrace my-3">
+            <%= cl_image_tag terrace.photo.key, class: "card-img-top terrace" %>
+            <div class="card-body terrace">
+              <h5 class="card-title terrace"><%= link_to terrace.name, terrace_path(terrace) %></h5>
+              <p class="card-text"><%= terrace.description %></p>
+            </div>
           </div>
         </div>
+      <% end %>
       </div>
-    <% end %>
+    </div>
+
+    <div class="col-sm-5">
+      <div class="bg-grey">
+
+      </div>
+    </div>
+
   </div>
 </div>
