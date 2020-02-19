@@ -2,6 +2,11 @@ require "open-uri"
 
 puts "Cleaning database..."
 Terrace.destroy_all
+User.destroy_all
+
+puts "Creating fake user..."
+user = User.new(name: "admin", email: "test@test.comr", password: "azerty")
+user.save!
 
 puts "Creating terraces..."
 file = URI.open('https://images.unsplash.com/photo-1414497370617-1d23dd92ab2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80')

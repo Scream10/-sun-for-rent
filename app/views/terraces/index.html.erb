@@ -3,7 +3,7 @@
   <div class="row">
     <% @terraces.each do |terrace| %>
       <div class="col-sm-3">
-        <div class="card terrace my-3" style="width: 17rem;">
+        <div class="card terrace my-3">
           <%= cl_image_tag terrace.photo.key, class: "card-img-top terrace" %>
           <div class="card-body terrace">
             <h5 class="card-title terrace"><%= link_to terrace.name, terrace_path(terrace) %></h5>
