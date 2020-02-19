@@ -23,15 +23,15 @@ class TerracesController < ApplicationController
 
   def new
     @terrace = Terrace.new()
-    @user = User.find(params[:user_id])
+    #@user = User.find(params[:user_id])
+    @terrace.user = current_user
   end
 
   def create
     @terrace = Terrace.new(terrace_params)
-    @user = User.find(params[:user_id])
-    @terrace.user_id = @user.id
+    @terrace.user = current_user
     if @terrace.save!
-      redirect_to user_path(@user.id)
+      redirect_to user_path(@terrase.user)
     else
       render :new
     end
@@ -47,6 +47,6 @@ class TerracesController < ApplicationController
   private
 
   def terrace_params
-    params.require(:terrace).permit(:name, :description, :photo, :address, :status, :user_id)
+    params.require(:terrace).permit(:name, :description, :photo, :address, :status)
   end
 end
