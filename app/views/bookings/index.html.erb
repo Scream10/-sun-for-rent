@@ -1,9 +1,40 @@
-<h2> Liste de vos réservations</h2>
-<% @bookings.each do |booking| %>
- <p><%= booking.terrace.name %></p>
-  <p><%= booking.terrace.address %></p>
- <p><%= booking.start_date %></p>
- <p><%= booking.end_date %></p>
- <p><%= ((booking.end_date - booking.start_date).to_i) * booking.terrace.price_per_night %> € </p>
- <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-second">
+  <%= link_to "#", class: "navbar-brand" do %>
+  <%= image_tag "" %>
+  <% end %>
 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <div class="nav-sec-item">
+        <li>
+          <%= link_to "Host a terrace", "#", class: "nav-sec-link" %>
+        </li>
+      </div>
+      <div class="nav-sec-item">
+        <li>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-sec-link" %>
+        </li>
+      </div>
+      <div class='nav-sec-item'>
+        <li>
+          <%= link_to "Log in", "#", class: "nav-sec-link" %>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<div>
+  <h2> Liste de vos réservations</h2>
+  <% @bookings.each do |booking| %>
+    <p><%= booking.terrace.name %></p>
+    <p><%= booking.terrace.address %></p>
+    <p><%= booking.start_date %></p>
+    <p><%= booking.end_date %></p>
+    <p><%= ((booking.end_date - booking.start_date).to_i) * booking.terrace.price_per_night %> € </p>
+   <% end %>
+</div>
