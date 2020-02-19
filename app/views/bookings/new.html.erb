@@ -28,20 +28,24 @@
   </div>
 </div>
 
-<div class="container mb-5">
+<div class="mb-5 img-background-index-booking" style="background-image: url('<%= cl_image_path @terrace.photo.key %>')">
   <div class="row">
     <div class="col-sm-4 offset-sm-4">
-      <div class="card new">
+      <div class="card card-booking">
         <div class= "d-flex justify-content-center">
           <h2> Booking the terrace : <%= @terrace.name %></h2>
         </div>
         <div class= "d-flex justify-content-center">
           <h5>Price per day: <%= @terrace.price_per_night %>€<h4>
         </div>
-          <%= simple_form_for [@terrace, @booking] do |f|  %>
-            <%= f.input :start_date, as: :date%>
+        <div class= "d-flex justify-content-center">
+          <%= simple_form_for [@terrace, @booking], class: "booking-form" do |f|  %>
+            <%= f.input :start_date, as: :date, class: 'w-100' %>
             <%= f.input :end_date, as: :date %>
-            <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+        </div>
+            <div class= "d-flex justify-content-center mt-4">
+              <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+            </div>
           <% end %>
       </div>
     </div>

@@ -28,7 +28,7 @@
   </div>
 </div>
 
-<div<%= cl_image_tag @terrace.photo.key, class: "img-terrace" %>>
+<div>
   <h2> Liste de vos réservations</h2>
   <% @bookings.each do |booking| %>
     <p><%= booking.terrace.name %></p>
