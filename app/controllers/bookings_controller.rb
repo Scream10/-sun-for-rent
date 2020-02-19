@@ -19,12 +19,11 @@ class BookingsController < ApplicationController
     @booking.terrace = @terrace
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+      redirect_to terraces_path
     else
       render :new
     end
   end
-
 
   def destroy
     @booking = Booking.find(params[:id])
