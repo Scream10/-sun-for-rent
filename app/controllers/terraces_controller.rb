@@ -1,7 +1,13 @@
 class TerracesController < ApplicationController
-
   def index
-    @terraces = Terrace.all
+    @terraces = Terrace.geocoded
+
+    @markers = @terraces.map do |terrace|
+      {
+        lat: terrace.latitude,
+        lng: terrace.longitude
+      }
+    end
   end
 
   def show
