@@ -1,0 +1,60 @@
+h2 {
+  color: $black;
+  padding: 24px;
+  margin: 0px 0px 0px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.container {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 16px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px;
+}
+
+.text-booking {
+  padding: 20px;
+}
+
+.card-category h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // vertical-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.card-category p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: lighter;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding: 0px;
+  margin: 0px;
+}
