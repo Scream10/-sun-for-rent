@@ -22,6 +22,10 @@
 
 .card-img-top.terrace {
   border-radius: 5px;
+  height: 200px;
+  widht: 200px;
+  background-size: cover;
+  object-fit: cover;
 }
 
 h5.card-title.terrace {
