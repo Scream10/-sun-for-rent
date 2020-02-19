@@ -1,4 +1,10 @@
+require 'date'
+
 class BookingsController < ApplicationController
+
+  def index
+    @bookings = Booking.all
+  end
 
   def new
     @terrace = Terrace.find(params[:terrace_id])
@@ -7,12 +13,16 @@ class BookingsController < ApplicationController
 
   def create
     @terrace = Terrace.find(params[:terrace_id])
+    # start_date = Date.new(booking_params['start_date(1i)'].to_i, booking_params['start_date(2i)'].to_i, booking_params['start_date(3i)'].to_i)
+    # end_date = Date.new(booking_params['end_date(1i)'].to_i, booking_params['end_date(2i)'].to_i, booking_params['end_date(3i)'].to_i)
     @booking = Booking.new(booking_params)
     @booking.terrace = @terrace
-    if @terrace.save
-      redirect_to user_path(@terrace.user)
+    @booking.user = current_user
+    # @booking.total_price = (end_date - start_date).to_i) * @terrace.price
+    if @booking.save
+      redirect_to bookings_path
     else
-      render 'terraces/show'
+      render :new
     end
   end
 
@@ -25,6 +35,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:price, :start_date, :end_date, :user_id, :terrace_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
