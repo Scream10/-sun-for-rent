@@ -4,6 +4,7 @@ puts "Cleaning database..."
 Terrace.destroy_all
 User.destroy_all
 
+
 puts "Creating fake user..."
 user = User.new(name: "admin", email: "test@test.comr", password: "azerty")
 user.save!
@@ -15,7 +16,7 @@ terrace.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 terrace.save!
 
 file = URI.open('https://images.unsplash.com/photo-1560448204-444f743ef6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')
-terrace = Terrace.new(name: "Building", description: "A rooftop with view of all the buildings and a BBQ", address: "82 Cours du Raccordement, 33000 Bordeaux", price_per_night: 35, status: true, user_id: 1)
+terrace = Terrace.new(name: "Building", description: "A rooftop with view of all the buildings and a BBQ", address: "82 Cours du Raccordement, 75000 Paris", price_per_night: 35, status: true, user_id: 1)
 terrace.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 terrace.save!
 
