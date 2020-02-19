@@ -13,12 +13,11 @@ class BookingsController < ApplicationController
 
   def create
     @terrace = Terrace.find(params[:terrace_id])
-    # start_date = Date.new(booking_params['start_date(1i)'].to_i, booking_params['start_date(2i)'].to_i, booking_params['start_date(3i)'].to_i)
+    # start_date = Date.new(booking_params['start_date(1i)'].to_i, bookusering_params['start_date(2i)'].to_i, booking_params['start_date(3i)'].to_i)
     # end_date = Date.new(booking_params['end_date(1i)'].to_i, booking_params['end_date(2i)'].to_i, booking_params['end_date(3i)'].to_i)
     @booking = Booking.new(booking_params)
     @booking.terrace = @terrace
     @booking.user = current_user
-    # @booking.total_price = (end_date - start_date).to_i) * @terrace.price
     if @booking.save
       redirect_to bookings_path
     else
