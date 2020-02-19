@@ -4,4 +4,6 @@
   <p><%= booking.terrace.address %></p>
  <p><%= booking.start_date %></p>
  <p><%= booking.end_date %></p>
-<% end %>
+ <p><%= ((booking.end_date - booking.start_date).to_i) * booking.terrace.price_per_night %> € </p>
+ <% end %>
+
