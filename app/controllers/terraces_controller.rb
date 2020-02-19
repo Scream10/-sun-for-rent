@@ -7,7 +7,7 @@ class TerracesController < ApplicationController
     else
       @terraces = Terrace.all
     end
-    
+
     @terraces = Terrace.geocoded
     @markers = @terraces.map do |terrace|
       {
