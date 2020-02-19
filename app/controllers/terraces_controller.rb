@@ -1,5 +1,4 @@
 class TerracesController < ApplicationController
-
   def index
     if params["terrace"]["address"].present?
       query = params["terrace"]["address"]
@@ -7,6 +6,14 @@ class TerracesController < ApplicationController
       @terraces = Terrace.where(sql_query, query: "%#{query}%")
     else
       @terraces = Terrace.all
+    end
+    
+    @terraces = Terrace.geocoded
+    @markers = @terraces.map do |terrace|
+      {
+        lat: terrace.latitude,
+        lng: terrace.longitude
+      }
     end
   end
 
