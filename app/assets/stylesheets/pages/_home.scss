@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .img-background {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   background-position: center;
   background-position: cover;
@@ -8,11 +8,18 @@
   top: 0px;
 }
 
-
-
 .card.search {
   padding: 15px;
   margin-top: 190px;
   width: 23rem;
   opacity: 0.90;
+}
+
+.search-form {
+  margin: 0;
+}
+
+.container-carousel{
+  margin-top: 150px;
+  padding-left: 0;
 }
