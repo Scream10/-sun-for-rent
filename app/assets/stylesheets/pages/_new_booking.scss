@@ -1,0 +1,25 @@
+.img-background-new-booking {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.widget-content {
+  width: 100%;
+  padding: 20px;
+  .dates {
+    margin-bottom: 10px;
+  }
+
+  .costs {
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2000ms ease-in-out;
+  }
+
+  .costs.is-visible {
+    max-height: 999em;
+  }
+}

@@ -3,11 +3,13 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
     @terraces = Terrace.all
+    @user = current_user
   end
 
   def new
     @terrace = Terrace.find(params[:terrace_id])
     @booking = Booking.new
+    @user = current_user
   end
 
   def create
