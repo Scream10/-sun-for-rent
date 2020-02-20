@@ -74,14 +74,15 @@
 
 <div class="container">
   <h2> List of your terraces</h2>
-
-  <% @terraces.each do |terrace| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(terrace.photo.key) %>')">
-        <div class="text-booking">
-          <h5><%= terrace.name %></h5>
-          <p><em><%= terrace.description %></em></p>
-          <p><%= terrace.address %></p>
+    <% @terraces.each do |terrace| %>
+      <% if terrace.user_id == current_user.id %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(terrace.photo.key) %>')">
+          <div class="text-booking">
+            <h5><%= terrace.name %></h5>
+            <p><em><%= terrace.description %></em></p>
+            <p><%= terrace.address %></p>
+          </div>
         </div>
-      </div>
-  <% end %>
+      <% end %>
+    <% end %>
 </div>

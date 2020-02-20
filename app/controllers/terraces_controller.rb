@@ -30,7 +30,7 @@ class TerracesController < ApplicationController
     @terrace = Terrace.new(terrace_params)
     @terrace.user_id = current_user.id
     if @terrace.save!
-      redirect_to terraces_path
+      redirect_to bookings_path
     else
       render :new
     end
