@@ -5,3 +5,23 @@
   width: 100%;
   background: rgba(0, 0, 0, .1);
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#map-photo-display {
+  width: 220px;
+  height: 150px;
+}
+
+#map-photo {
+  background-size: cover;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
