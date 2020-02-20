@@ -11,8 +11,10 @@ a.nav-link {
 
 .navbar-home {
   justify-content: space-between;
+  align-items: center;
   background: linear-gradient(rgba(116,116,116,0.4), transparent);
-  z-index : 1;
+  z-index: 1;
+  padding: 0px 10px;
 }
 
 .navbar-home .navbar-collapse {
@@ -20,7 +22,7 @@ a.nav-link {
 }
 
 .navbar-home .navbar-brand img {
-  width: 40px;
+  width: 50px;
 }
 
 .navbar-second {
@@ -37,7 +39,7 @@ a.nav-link {
 }
 
 .navbar-second .navbar-brand img {
-  width: 40px;
+  width: 50px;
 }
 
 .nav-sec-item {
