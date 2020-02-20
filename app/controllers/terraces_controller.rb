@@ -12,7 +12,8 @@ class TerracesController < ApplicationController
     @markers = @terraces.map do |terrace|
       {
         lat: terrace.latitude,
-        lng: terrace.longitude
+        lng: terrace.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { terrace: terrace })
       }
     end
   end
