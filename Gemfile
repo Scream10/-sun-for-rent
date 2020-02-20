@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
+gem 'flatpickr'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
