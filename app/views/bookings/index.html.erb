@@ -9,7 +9,12 @@
     <ul class="navbar-nav mr-auto">
       <div class="nav-sec-item">
         <li>
-          <%= link_to "Host a terrace", host_path, class: "nav-sec-link" %>
+          <%= link_to "Book a terrace", root_path, class: "nav-sec-link" %>
+        </li>
+      </div>
+      <div class="nav-sec-item">
+        <li>
+          <%= link_to "Host a terrace", new_terrace_path, class: "nav-sec-link" %>
         </li>
       </div>
       <% if !user_signed_in? %>
@@ -42,7 +47,7 @@
 </div>
 
 <div class="container">
-  <h2> Liste de vos réservations</h2>
+  <h2> List of your reservations </h2>
 
   <% @bookings.each do |booking| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(booking.terrace.photo.key) %>')">
@@ -69,4 +74,20 @@
         </div>
       </div>
   <% end %>
+</div>
+
+<div class="container">
+  <h2> List of your terraces</h2>
+    <% @terraces.each do |terrace| %>
+      <% if terrace.user_id == current_user.id %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(terrace.photo.key) %>')">
+          <div class="text-booking">
+            <h5><%= terrace.name %></h5>
+            <p><strong><%= terrace.price_per_night %></strong> €</p>
+            <p><em><%= terrace.description %></em></p>
+            <p><%= terrace.address %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
 </div>

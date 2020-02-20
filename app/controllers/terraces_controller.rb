@@ -27,14 +27,13 @@ class TerracesController < ApplicationController
 
   def new
     @terrace = Terrace.new
-    @terrace.user_id = current_user.id
   end
 
   def create
     @terrace = Terrace.new(terrace_params)
     @terrace.user_id = current_user.id
     if @terrace.save!
-      redirect_to terraces_path
+      redirect_to bookings_path
     else
       render :new
     end
@@ -50,6 +49,6 @@ class TerracesController < ApplicationController
   private
 
   def terrace_params
-    params.require(:terrace).permit(:name, :description, :photo, :address)
+    params.require(:terrace).permit(:name, :description, :photo, :address, :price_per_night)
   end
 end
