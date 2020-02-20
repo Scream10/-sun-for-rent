@@ -45,7 +45,7 @@
             <%= f.input :description, placeholder: "Beautiful terrace with flowers ..."%>
             <%= f.input :photo, as: :file %>
             <%= f.input :address, placeholder: "1 rue des fleurs, 33000 Bordeaux" %>
-            <%= f.input :price_per_night, placeholder: "15€" %>
+            <%= f.input :price_per_night, as: :string, placeholder: "15€" %>
           <div class =" mt-5 mb-5 d-flex justify-content-center">
             <%= f.submit "Create", class: "btn btn-primary" %>
           </div>
