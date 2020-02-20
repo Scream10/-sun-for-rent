@@ -37,26 +37,33 @@
 
 </div>
 
-<div class="mb-5 img-background-index-booking" style="background-image: url('<%= cl_image_path @terrace.photo.key %>')">
+<div class="mb-5 img-background-new-booking" style="background-image: url('<%= cl_image_path @terrace.photo.key %>')">
   <div class="row">
     <div class="col-sm-4 offset-sm-4">
       <div class="card card-booking">
         <div class= "d-flex justify-content-center">
           <h2> Booking the terrace : <%= @terrace.name %></h2>
         </div>
-        <div class= "d-flex justify-content-center">
+        <div class= "d-flex justify-content-center mt-3">
           <h5>Price per day: <%= @terrace.price_per_night %>€<h4>
         </div>
+
         <div class= "d-flex justify-content-center">
-          <%= simple_form_for [@terrace, @booking], html: { class: "booking-form"} do |f|  %>
-            <%= f.input :start_date, as: :date %>
-            <%= f.input :end_date, as: :date %>
+
+          <div class="widget-content" data-unavailable="<%= @terrace.unavailable_dates.to_json %>">
+            <%= simple_form_for([@terrace, @booking]) do |f| %>
+              <%= f.input :start_date, as: :string, label: "From", placeholder: "pick a start date..", wrapper_html: { class: "inline_field_wrapper" } %>
+              <%= f.input :end_date, as: :string, label: "To",disabled: true, placeholder: "pick an end date..", wrapper_html: { class: "inline_field_wrapper" } %>
+          </div>
         </div>
             <div class= "d-flex justify-content-center mt-4">
-              <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+              <%= f.submit "Book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
             </div>
           <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+
