@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def host
+    @user = current_user
   end
 
 end

@@ -16,10 +16,12 @@ class TerracesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { terrace: terrace })
       }
     end
+    @user = current_user
   end
 
   def show
     @terrace = Terrace.find(params[:id])
+    @user = current_user
   end
 
   def new
