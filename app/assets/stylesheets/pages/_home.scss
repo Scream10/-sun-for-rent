@@ -1,18 +1,10 @@
 // Specific CSS for your home-page
 .img-background {
-  height: 90%;
+  max-height:90%;
   width: 100%;
-  background-position: center;
-  background-position: cover;
+  background-size: cover;
   position: absolute;
   top: 0px;
-}
-
-.card.search {
-  padding: 15px;
-  margin-top: 190px;
-  width: 23rem;
-  opacity: 0.90;
 }
 
 .search-form {
