@@ -1,5 +1,3 @@
-require 'date'
-
 class BookingsController < ApplicationController
 
   def index
