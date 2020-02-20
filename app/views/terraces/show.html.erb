@@ -49,12 +49,9 @@
     </div>
 
 <!-- TEST AVAILABILITY -->
-    <div class="widget-content check-dispo" data-unavailable="<%= @terrace.unavailable_dates.to_json %>">
-      <hr>
-      <div class="dates">
+      <div class="check-dispo">
         <%= link_to 'Book this terrace', new_terrace_booking_path(@terrace), class: "btn btn-lg btn-primary" %>
       </div>
-    </div>
   </div>
 
 </div>
