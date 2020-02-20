@@ -8,6 +8,4 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [ :index, :destroy ]
-
-  get '/host', to: 'pages#host'
 end

@@ -24,7 +24,6 @@ class TerracesController < ApplicationController
 
   def new
     @terrace = Terrace.new
-    @terrace.user_id = current_user.id
   end
 
   def create
