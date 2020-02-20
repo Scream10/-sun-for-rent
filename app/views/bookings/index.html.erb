@@ -36,6 +36,21 @@
           <p><em><%= booking.start_date %> –– <%= booking.end_date %></em></p>
           <p><strong><%= ((booking.end_date - booking.start_date).to_i) * booking.terrace.price_per_night %>€ </strong></p>
           <p><%= booking.terrace.address %></p>
+          <div class="d-flex justify-content-center">
+            <% j_minus = (booking.start_date - Date.today).to_i  %>
+            <button type="button" class="mt-3 btn btn-outline-light btn-toggle-date" data-toggle="popover" data-placement="right"
+            data-content=" <% if booking.start_date > Date.today %>
+                                J - <%= j_minus  %> days !
+                            <% elsif %>
+                              <% booking.start_date < Date.today && Date.today < booking.end_date %>
+                              <%= "happening .." %>
+                            <% else %>
+                              <%= "already done, hope you enjoyed your stay !" %>
+                            <% end %>">
+
+              <i class="far fa-clock"></i>
+            </button>
+          </div>
         </div>
       </div>
   <% end %>
