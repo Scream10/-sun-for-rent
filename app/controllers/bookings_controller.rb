@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
     @terraces = Terrace.all
     @user = current_user
+
   end
 
   def new
