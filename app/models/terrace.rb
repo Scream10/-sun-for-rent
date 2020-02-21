@@ -12,4 +12,11 @@ class Terrace < ApplicationRecord
       { from: range[0], to: range[1] }
     end
   end
+
+  include PgSearch::Model
+  pg_search_scope :search_by_address,
+    against: :address,
+    using: {
+      tsearch: { prefix: true }
+    }
 end
