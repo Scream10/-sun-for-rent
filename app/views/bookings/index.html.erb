@@ -43,54 +43,81 @@
       <% end %>
     </ul>
   </div>
-
 </div>
 
 <div class="container">
-  <h2> List of your reservations </h2>
-
-  <% @bookings.each do |booking| %>
-    <% if booking.user_id == current_user.id %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(booking.terrace.photo.key) %>')">
-        <div class="text-booking">
-          <h5><%= booking.terrace.name %></h5>
-          <p><em><%= booking.start_date %> –– <%= booking.end_date %></em></p>
-          <p><strong><%= ((booking.end_date - booking.start_date).to_i) * booking.terrace.price_per_night %>€ </strong></p>
-          <p><%= booking.terrace.address %></p>
-          <div class="d-flex justify-content-center">
-            <% j_minus = (booking.start_date - Date.today).to_i  %>
-            <button type="button" class="mt-3 btn btn-outline-light btn-toggle-date" data-toggle="popover" data-placement="right"
-            data-content=" <% if booking.start_date > Date.today %>
-                                J - <%= j_minus  %> days !
-                            <% elsif %>
-                              <% booking.start_date < Date.today && Date.today < booking.end_date %>
-                              <%= "happening .." %>
-                            <% else %>
-                              <%= "already done, hope you enjoyed your stay !" %>
-                            <% end %>">
-
-              <i class="far fa-clock"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <nav>
+    <div class="nav nav-tabs onglets d-flex justify-content-center" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">My terraces</a>
+      <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">My bookings</a>
+    </div>
+  </nav>
 </div>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-<div class="container">
-  <h2> List of your terraces</h2>
+    <div class="container">
+      <h2 class="mt-4"> List of your terraces</h2>
 
-    <% @terraces.each do |terrace| %>
-      <% if terrace.user_id == current_user.id %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(terrace.photo.key) %>')">
-          <div class="text-booking">
-            <h5><%= terrace.name %></h5>
-            <p><strong><%= terrace.price_per_night %></strong> €</p>
-            <p><em><%= terrace.description %></em></p>
-            <p><%= terrace.address %></p>
+        <% @terraces.each do |terrace| %>
+          <% if terrace.user_id == current_user.id %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(terrace.photo.key) %>')">
+              <div class="text-booking">
+                <h5><%= terrace.name %></h5>
+                <p><strong><%= terrace.price_per_night %></strong> €</p>
+                <p><em><%= terrace.description %></em></p>
+                <p><%= terrace.address %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+    <div class="container">
+      <h2 class="mt-4"> List of your reservations </h2>
+
+      <% @bookings.each do |booking| %>
+        <% if booking.user_id == current_user.id %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(booking.terrace.photo.key) %>')">
+            <div class="text-booking">
+              <h5><%= booking.terrace.name %></h5>
+              <p><em><%= booking.start_date %> –– <%= booking.end_date %></em></p>
+              <p><strong><%= ((booking.end_date - booking.start_date).to_i) * booking.terrace.price_per_night %>€ </strong></p>
+              <p><%= booking.terrace.address %></p>
+              <div class="d-flex justify-content-center">
+                <% j_minus = (booking.start_date - Date.today).to_i  %>
+                <button type="button" class="mt-3 btn btn-outline-light btn-toggle-date" data-toggle="popover" data-placement="right"
+                data-content=" <% if booking.start_date > Date.today %>
+                                    J - <%= j_minus  %> days !
+                                <% elsif %>
+                                  <% booking.start_date < Date.today && Date.today < booking.end_date %>
+                                  <%= "happening .." %>
+                                <% else %>
+                                  <%= "already done, hope you enjoyed your stay !" %>
+                                <% end %>">
+
+                  <i class="far fa-clock"></i>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
