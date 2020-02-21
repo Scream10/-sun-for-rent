@@ -6,7 +6,7 @@ User.destroy_all
 
 
 puts "Creating fake user..."
-user = User.new(name: "admin", email: "test@test.comr", password: "azerty")
+user = User.new(name: "Mr.Wagon", email: "test@test.comr", password: "azerty")
 user.save!
 
 puts "Creating terraces..."
