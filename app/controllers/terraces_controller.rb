@@ -50,10 +50,10 @@ class TerracesController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
+    @user = current_user
     @terrace = Terrace.find(params[:id])
     @terrace.destroy
-    redirect_to user_path(@user.id)
+    redirect_to bookings_path
   end
 
   private
