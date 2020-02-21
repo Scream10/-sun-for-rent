@@ -7,10 +7,11 @@ const toggleDateInputs = () => {
   if (startDateInput && endDateInput) {
     const unvailableDates = JSON.parse(document.querySelector('.widget-content').dataset.unavailable)
     flatpickr(startDateInput, {
-      enableTime: true,
+      enableTime: false,
       minDate: 'today',
       dateFormat: 'd-m-Y',
       disable: unvailableDates,
+      autoclose: true,
       onChange: function(selectedDates, selectedDate) {
         if (selectedDate === '') {
           endDateInput.disabled = true;
@@ -25,6 +26,7 @@ const toggleDateInputs = () => {
       flatpickr(endDateInput, {
         dateFormat: 'd-m-Y',
         disable: unvailableDates,
+        autoclose: true
       });
   }
 };
