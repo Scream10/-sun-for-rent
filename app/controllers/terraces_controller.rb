@@ -13,7 +13,8 @@ class TerracesController < ApplicationController
       {
         lat: terrace.latitude,
         lng: terrace.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { terrace: terrace })
+        infoWindow: render_to_string(partial: "info_window", locals: { terrace: terrace }),
+        image_url: helpers.asset_url('parasol.png')
       }
     end
     @user = current_user
