@@ -26,7 +26,7 @@
       <% else %>
         <li class="nav-item dropdown d-flex align-items-center ml-3">
           <% if @user.avatar.attached? %>
-            <img src="<%= (url_for(@user.avatar)) %>" class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup=true aria-expanded=false >
+            <img src="<%= (url_for(current_user.avatar)) %>" class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup=true aria-expanded=false >
           <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>

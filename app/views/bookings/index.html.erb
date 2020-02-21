@@ -9,12 +9,12 @@
     <ul class="navbar-nav mr-auto">
       <div class="nav-sec-item">
         <li>
-          <%= link_to "Book a terrace", root_path, class: "nav-sec-link" %>
+          <%= link_to "Host a terrace", new_terrace_path, class: "nav-sec-link" %>
         </li>
       </div>
       <div class="nav-sec-item">
         <li>
-          <%= link_to "Host a terrace", new_terrace_path, class: "nav-sec-link" %>
+          <%= link_to "Book a terrace", root_path, class: "nav-sec-link" %>
         </li>
       </div>
       <% if !user_signed_in? %>
@@ -31,7 +31,7 @@
       <% else %>
         <li class="nav-item dropdown d-flex align-items-center ml-3">
           <% if @user.avatar.attached? %>
-            <img src="<%= (url_for(@user.avatar)) %>" class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup=true aria-expanded=false >
+            <img src="<%= (url_for(current_user.avatar)) %>" class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup=true aria-expanded=false >
           <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
