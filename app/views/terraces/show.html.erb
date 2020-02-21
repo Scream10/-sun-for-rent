@@ -86,12 +86,27 @@
             <h5>Price per day: <%= @terrace.price_per_night %>€<h4>
           </div>
 
-          <div class="modal-body d-flex justify-content-center text-center">
+          <div class="modal-body d-flex justify-content-center text-center flex-column">
               <div class="widget-content" data-unavailable="<%= @terrace.unavailable_dates.to_json %>">
                 <%= simple_form_for([@terrace, @booking]) do |f| %>
                   <%= f.input :start_date, as: :string, label: "From", placeholder: "pick a start date..", wrapper_html: { class: "inline_field_wrapper" } %>
                   <%= f.input :end_date, as: :string, label: "To",disabled: true, placeholder: "pick an end date..", wrapper_html: { class: "inline_field_wrapper" } %>
               </div>
+          <!-- TEST PRIX -->
+              <div class="costs costs-hidden" data-rate="<%= @terrace.price_per_night.to_json %>">
+                <table class="table d-flex justify-content-center text-center">
+                  <tr class="d-flex justify-content-center">
+                    <td>€<%= @terrace.price_per_night %> x <span id="days">0</span> days</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Total</strong></td>
+                    <td class="text-right">€<span id=total-price>0</span></td>
+                  </tr>
+                </table>
+              </div>
+
+
+
           </div>
 
           <div class="modal-footer d-flex justify-content-center mt-2">
