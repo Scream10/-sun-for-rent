@@ -64,3 +64,53 @@ h2 {
   font-size: 20px;
   border: none;
 }
+
+.onglets {
+  border-bottom: 1px solid $light-gray;
+}
+
+#nav-home-tab {
+  color:  #A9A9A9 !important;
+  text-shadow: none;
+  font-weight: lighter;
+  font-size: 20px;
+  margin: 0 16px;
+  border-radius: 0px;
+  border-top: none;
+  border-bottom: none;
+  &:hover {
+    border-radius: 0px;
+    border-bottom: none;
+  }
+}
+
+a#nav-home-tab.active {
+  color: $black !important;
+  font-weight: normal;
+}
+
+#nav-profile-tab {
+  color:  #A9A9A9 !important;
+  text-shadow: none;
+  font-weight: lighter;
+  font-size: 20px;
+  margin: 0 16px;
+  border-radius: 0px;
+  border-top: none;
+  border-bottom: none;
+  &:hover {
+    border-radius: 0px;
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+a#nav-profile-tab.active {
+  color: $black !important;
+  font-weight: normal;
+}
+
+
+
+
+
