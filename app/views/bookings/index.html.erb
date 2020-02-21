@@ -67,6 +67,11 @@
                 <p><strong><%= terrace.price_per_night %></strong> €</p>
                 <p><em><%= terrace.description %></em></p>
                 <p><%= terrace.address %></p>
+              <div class="d-flex justify-content-center mt-3">
+                <%= link_to icon('fas', 'trash'), terrace_path(terrace),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, class:"icon-trash" %>
+              </div>
               </div>
             </div>
           <% end %>
@@ -102,22 +107,17 @@
                   <i class="far fa-clock"></i>
                 </button>
               </div>
+              <div class= "d-flex justify-content-center mt-2">
+                <%= link_to icon('fas', 'trash'), booking_path(booking),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, class:"icon-trash" %>
+              </div>
             </div>
-          </div>
+          <% end %>
+        </div>
         <% end %>
-      <% end %>
+        </div>
     </div>
 
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
