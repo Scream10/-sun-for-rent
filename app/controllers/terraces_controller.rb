@@ -24,6 +24,15 @@ class TerracesController < ApplicationController
     @terrace = Terrace.find(params[:id])
     @booking = Booking.new
     @user = current_user
+
+    @terraces = Terrace.geocoded.find(params[:id])
+    @markers =
+      [{
+        lat: @terraces.latitude,
+        lng: @terraces.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { terrace: @terraces }),
+        image_url: helpers.asset_url('parasol.png')
+      }]
   end
 
   def new
