@@ -1,14 +1,11 @@
 class TerracesController < ApplicationController
   def index
-    if !params["terrace"].nil?
-      query = params["terrace"]["address"]
-      sql_query = "terraces.address ILIKE :query"
-      @terraces = Terrace.where(sql_query, query: "%#{query}%")
-    else
-      @terraces = Terrace.all
+    @terraces = Terrace.all
+    if params[:query].present?
+      @terraces = @terraces.search_by_address(params[:query])
     end
 
-    @terraces = Terrace.geocoded
+    @terraces = @terraces.geocoded
     @markers = @terraces.map do |terrace|
       {
         lat: terrace.latitude,
