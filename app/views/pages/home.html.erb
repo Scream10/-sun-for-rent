@@ -32,7 +32,7 @@
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
+              <%= link_to "My dashboard", bookings_path, class: "dropdown-item" %>
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
@@ -43,9 +43,9 @@
 
   <%= image_tag "Background.jpg", class: "img-background" %>
 
-  <div class="container-sm search-form d-flex justify-content-center">
+  <div class="container-sm d-flex justify-content-center">
     <div class="row">
-      <div class="col-sm-10 offset-sm-4">
+      <div class="search-form col-sm-12 offset-sm-4">
         <div class="card search">
           <div class= "d-flex justify-content-center">
             <h2>Book unique terraces to enjoy</h2>
